@@ -1,0 +1,8 @@
+def solve(A):
+    start_list = A
+  #  if start_list is not None:
+    squares = [x*x for x in start_list]
+    squares.sort()
+    print("Sorted:", squares)
+
+solve([-132, -38, -5, 35, 322, 358, 902, 912, 942, 961 ])

@@ -1,0 +1,15 @@
+def specialStrings(A):
+    st = []
+    print(st)
+    print("length of array A : ",len(A))
+    print(len(max(A,key=len)))
+    ln = 1
+    for n in range(0, 3):
+        print ("n = ", n)
+        while ln < len(A):
+            for c in range(0, 3):
+                st.append(A[0][n]+A[ln][c]) 
+            ln += 1
+    return st
+
+print(specialStrings(["ozs","kjs","3","gdj"]))

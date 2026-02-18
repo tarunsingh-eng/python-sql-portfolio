@@ -1,0 +1,39 @@
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0, 6])
+ypoints = np.array([0, 250])
+
+print(matplotlib.__version__)
+plt.plot(xpoints, ypoints)
+plt.show()
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+y = np.array([35, 25, 25, 15])
+
+plt.pie(y)
+plt.show() 
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+plt.pie(y, labels = mylabels)
+plt.legend(title = "Four Fruits:")
+plt.show() 
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+
+plt.scatter(x, y)
+plt.show()

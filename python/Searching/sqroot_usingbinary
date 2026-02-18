@@ -1,0 +1,29 @@
+def sqrt(A):
+        l = 0
+        r = A
+        while l<=r:
+            print("Condition to break l<=r not met", l, r)
+            mid = (l+r)//2
+            print("New value of mid", mid)
+            sq = mid*mid
+            print("New value of sq", sq)
+            sq1 = (mid+1)*(mid+1)
+            print("New value of sq1", sq1)
+            if sq < A and sq1 > A:
+                print(mid)
+                break
+            elif sq1 == A:
+                print(mid+1)
+                break
+            elif sq == A:
+                print(mid)
+                break
+            elif sq < A:
+                l = mid + 1 
+                print("left boundary increased bc sq was lesser",l)
+            elif sq > A:
+                r = mid - 1 
+                print("right boundary decresed bc sq was greater",r)
+            
+
+sqrt(9890878007800987998000)
