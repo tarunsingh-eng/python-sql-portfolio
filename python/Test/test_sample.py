@@ -20,3 +20,8 @@ def driver():
 def test_google(driver):
     driver.get("https://google.com")
     assert "Google" in driver.title
+
+
+def test_mysite(driver):
+    driver.get("https://tarunsingh.co.in")
+    assert "Tarun Singh" in driver.title 
