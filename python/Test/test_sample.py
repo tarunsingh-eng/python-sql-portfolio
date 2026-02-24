@@ -49,4 +49,3 @@ def test_mysite(driver):
     driver.execute_script("arguments[0].click();", element)
 
 
-    input ("Press Enter to close")
