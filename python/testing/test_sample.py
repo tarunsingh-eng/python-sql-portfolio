@@ -16,6 +16,9 @@ def test_two():
 def test_division():
     assert 6/2 == 3 
 
+def test_division():
+    assert 5/2 == 2.5
+
 @pytest.fixture
 
 def driver():
