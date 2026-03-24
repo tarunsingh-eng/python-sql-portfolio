@@ -21,9 +21,10 @@ Navigation Test
     ${url}=     Set Variable    https://tarunsingh.co.in/?ci_token=${CF_TEST_SECRET}
     Go To   ${url}
     Wait Until Keyword Succeeds     20s     2s    
-    Addcookie      CF_Authorization     ${CF_TEST_SECRET}       domain=.tarunsingh.co.in    path=/
+    Add     cookie      CF_Authorization     ${CF_TEST_SECRET}       domain=.tarunsingh.co.in    path=/
     Go To   ${url}        
     Scroll Element Into View    //a[normalize-space()='Courses']
+    Wait Until Page Contains Element    //a[normalize-space()='Courses']        20s
     Click Element    //a[normalize-space()='Courses']
     Wait Until Page Contains Element      //a[normalize-space()='Projects']
     Scroll Element Into View    //a[normalize-space()='Projects']
