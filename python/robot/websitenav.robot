@@ -24,9 +24,15 @@ Navigation Test
     Wait Until Keyword Succeeds     20s     2s      Page Should Contain Element     //a[normalize-space()='Courses']
     Add Cookie    CF_Authorization    ${CF_TEST_SECRET}    domain=.tarunsingh.co.in    path=/
     Go To   ${url}        
+    Wait Until Page Contains Element    //a[normalize-space()='Courses']    20s
     Scroll Element Into View    //a[normalize-space()='Courses']
-    Wait Until Page Contains Element    //a[normalize-space()='Courses']        20s
     Click Element    //a[normalize-space()='Courses']
+
+    ${title}=    Get Title
+    Log To Console    TITLE=${title}
+    Capture Page Screenshot
+    Page Should Contain Element    //a[normalize-space()='Projects']
+
     Wait Until Page Contains Element    //a[normalize-space()='Projects']    20s
     Scroll Element Into View    //a[normalize-space()='Projects']
     Click Element    //a[normalize-space()='Projects']
