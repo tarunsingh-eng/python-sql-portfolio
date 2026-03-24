@@ -24,19 +24,19 @@ jobs:
         run:  |  
           pip install pytest robotframework pytest robotframework-seleniumlibrary webdriver-manager
 
-      - name: Iinstall Chrome
+      - name: Install Chrome
         run:  | 
           sudo apt update
           sudo apt install -y chromium-browser  
 
       - name: Run tests
         continue-on-error: true
+        env:
+          CF_TEST_SECRET: ${{secrets.CF_TEST_SECRET}}
         run:  |
           pytest python/testing/
-          robot -d test-results -v HEADLESS:True python/robot/
+          robot -d test-results -v HEADLESS:True -v CF_TEST_SECRET:$CF_TEST_SECRET python/robot/
       
-
-
       - name: Prepare Report
         if: always()
         run: |
@@ -45,7 +45,7 @@ jobs:
             cp test-results/report.html docs/index.html
           else
             echo "<h1>Noreportgenerated</h1>" > docs/index.html
-            
+
       - name: commit report to repo 
         if: github.ref == 'refs/heads/main'
         run: |

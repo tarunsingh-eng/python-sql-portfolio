@@ -1,3 +1,5 @@
+import os
+import requests
 import pytest
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -23,12 +25,26 @@ def test_division():
 @pytest.fixture
 
 def driver():
+    secret = os.getenv("CF_TEST_SECRET")
+    assert secret, "CF_TEST_SECRET is missing"
+
     options = Options()
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
     driver =webdriver.Chrome(options=options)
+
+    driver.execute_cdp_cmd("Network.enable", {})
+    driver.execute_cdp_cmd(
+        "Network.setExtraHTTPHeaders",
+        {
+            "headers": {
+                "x-ci-secret": secret
+            }
+        }
+    )
+
     yield driver
     driver.quit()
 
