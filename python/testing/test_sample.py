@@ -19,9 +19,6 @@ def test_two():
 def test_division():
     assert 6/2 == 3 
 
-def test_division():
-    assert 5/2 == 2.5
-
 @pytest.fixture
 def driver():
     options = Options()
@@ -29,7 +26,7 @@ def driver():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    d = webdriver.Chrome(options)
+    d = webdriver.Chrome(options=options)
     yield d
     d.quit()
 
@@ -44,7 +41,7 @@ def protected_driver():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    driver =webdriver.Chrome(options)
+    driver =webdriver.Chrome(options=options)
 
     driver.execute_cdp_cmd("Network.enable", {})
     driver.execute_cdp_cmd(
@@ -70,19 +67,19 @@ def test_mysite(protected_driver):
     assert "Tarun Singh" in protected_driver.title
 
 
-    driver.execute_script("window.scrollBy(0, document.body.scrollHeight)")
+    protected_driver.execute_script("window.scrollBy(0, document.body.scrollHeight)")
 
-    element = WebDriverWait(driver, 10).until( 
+    element = WebDriverWait(protected_driver, 10).until( 
         EC.presence_of_element_located(
         (By.CSS_SELECTOR, 'a[href="https://tarunsingh.co.in/courses/"]')))
     
 
 
-    driver.execute_script("arguments[0].scrollIntoView({block:'center'});", element)
+    protected_driver.execute_script("arguments[0].scrollIntoView({block:'center'});", element)
 
-    WebDriverWait(driver, 5).until(EC.element_to_be_clickable(
+    WebDriverWait(protected_driver, 5).until(EC.element_to_be_clickable(
         (By.CSS_SELECTOR, 'a[href="https://tarunsingh.co.in/courses/"]')
     ))
-    driver.execute_script("arguments[0].click();", element)
+    protected_driver.execute_script("arguments[0].click();", element)
 
 
