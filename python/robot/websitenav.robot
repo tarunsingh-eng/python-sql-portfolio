@@ -11,13 +11,13 @@ sys.modules['selenium.webdriver'].ChromeOptions()       sys,    selenium.webdriv
     Call method     ${chrome_options}     add_argument      --headless=new
     Call method     ${chrome_options}     add_argument      --no-sandbox
     Call method     ${chrome_options}     add_argument      --disable-dev-shm-usage
-    Call method     ${chrome_options}      add_argument     --disable-gpu
+    Call method     ${chrome_options}     add_argument      --disable-gpu
     Create Webdriver       Chrome       options=${chrome_options}
 
 *** Test Cases ***
 Navigation Test
     Open Chrome For CI
-    Go To    https:tarunsingh.co.in
+    Go To    https://tarunsingh.co.in
     Scroll Element Into View    //a[normalize-space()='Courses']
     Click Element   //a[normalize-space()='Courses']
     Scroll Element Into View      //a[normalize-space()='Projects']
