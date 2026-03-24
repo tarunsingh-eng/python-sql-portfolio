@@ -27,5 +27,3 @@ Navigation Test
     Click Element                 //a[normalize-space()='blog']
     Scroll Element Into View        //a[@href='https://tarunsingh.co.in/'][normalize-space()='Tarun Singh']
     Click Element                   //a[@href='https://tarunsingh.co.in/'][normalize-space()='Tarun Singh']
-
-          

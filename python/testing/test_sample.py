@@ -53,13 +53,11 @@ def test_google(driver):
     assert "Google" in driver.title
 
 
-def test_mysite(driver):
-    driver.get("https://tarunsingh.co.in")
-    WebDriverWait(driver, 10).until(lambda d: d.title !="")
-    #  driver.set_window_position(50,50)
-    driver.set_window_size(1260,700)
-  
-    assert "Tarun Singh" in driver.title 
+def test_mysite(protected_driver):
+    protected_driver.get("https://tarunsingh.co.in/python/")
+    WebDriverWait(protected_driver, 10).until(lambda d: d.title != "")
+    assert "Tarun Singh" in protected_driver.title
+
 
     driver.execute_script("window.scrollBy(0, document.body.scrollHeight)")
 
