@@ -29,7 +29,7 @@ def driver():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    d = webdriver.Chrome(optons=options)
+    d = webdriver.Chrome(options)
     yield d
     d.quit()
 
@@ -44,7 +44,7 @@ def protected_driver():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    driver =webdriver.Chrome(options=options)
+    driver =webdriver.Chrome(options)
 
     driver.execute_cdp_cmd("Network.enable", {})
     driver.execute_cdp_cmd(
