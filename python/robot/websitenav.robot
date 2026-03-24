@@ -14,6 +14,7 @@ Open Chrome For CI
     ${ua}=         Set Variable         user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115 Safari/537.36
     Call Method    ${chrome_options}    add_argument    ${ua}    
     Create Webdriver    Chrome    options=${chrome_options}
+    Set Selenium Timeout    20s
 
 *** Test Cases ***
 Navigation Test
@@ -26,7 +27,7 @@ Navigation Test
     Scroll Element Into View    //a[normalize-space()='Courses']
     Wait Until Page Contains Element    //a[normalize-space()='Courses']        20s
     Click Element    //a[normalize-space()='Courses']
-    Wait Until Page Contains Element      //a[normalize-space()='Projects']
+    Wait Until Page Contains Element    //a[normalize-space()='Projects']    20s
     Scroll Element Into View    //a[normalize-space()='Projects']
     Click Element    //a[normalize-space()='Projects']
     Scroll Element Into View    //a[normalize-space()='Video Portfolio']
