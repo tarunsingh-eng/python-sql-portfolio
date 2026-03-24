@@ -39,14 +39,14 @@ jobs:
         env:
           CF_TEST_SECRET: ${{secrets.CF_TEST_SECRET}}
         run: |
-            pytest python/testing/
+            pytest --vv -s -l python/testing/
 
       - name: Run robot tests
         if: always()
         env:
           CF_TEST_SECRET: ${{secrets.CF_TEST_SECRET}}
         run:  |
-          robot -d test-results -v HEADLESS:True -v CF_TEST_SECRET:$CF_TEST_SECRET python/robot/
+          robot -L TRACE:TRACE --console verbose -d test-results -v HEADLESS:True -v CF_TEST_SECRET:$CF_TEST_SECRET python/robot/
       
       - name: Prepare Report
         if: always()
