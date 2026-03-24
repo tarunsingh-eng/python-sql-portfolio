@@ -22,7 +22,12 @@ jobs:
 
       - name: Install dependencies
         run:  |  
-          pip install pytest robotframework pytest robotframework-seleniumlibrary
+          pip install pytest robotframework pytest robotframework-seleniumlibrary webdriver-manager
+
+      - name: Iinstall Chrome
+        run:  | 
+          sudo apt update
+          sudo apt install -y chromium-browser  
 
       - name: Run tests
         continue-on-error: true
@@ -30,7 +35,7 @@ jobs:
           pytest python/testing/
           robot -d test-results -v HEADLESS:True python/robot/
       
-          
+
 
       - name: Prepare Report
         if: always()
