@@ -38,7 +38,7 @@ jobs:
         env:
           CF_TEST_SECRET: ${{secrets.CF_TEST_SECRET}}
         run:  |
-          pytest python/testing/
+          pytest testing/
           robot -d test-results -v HEADLESS:True -v CF_TEST_SECRET:$CF_TEST_SECRET python/robot/
       
       - name: Prepare Report
