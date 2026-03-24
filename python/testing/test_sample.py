@@ -62,7 +62,7 @@ def test_google(driver):
 
 
 def test_mysite(protected_driver):
-    protected_driver.get("https://tarunsingh.co.in/python/")
+    protected_driver.get("https://tarunsingh.co.in/")
     WebDriverWait(protected_driver, 10).until(lambda d: d.title != "")
     assert "Tarun Singh" in protected_driver.title
 
