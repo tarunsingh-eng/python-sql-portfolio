@@ -18,9 +18,10 @@ Open Chrome For CI
 *** Test Cases ***
 Navigation Test
     Open Chrome For CI
-    Go To   https://tarunsingh.co.in
+    ${url}=     Set Variable    https://tarunsingh.co.in/?ci_token=${CF_TEST_SECRET}
+    Go To   ${url}
     Addcookie      CF_Authorization     ${CF_TEST_SECRET}       domain=.tarunsingh.co.in    path=/
-    Go To   https://tarunsingh.co.in        
+    Go To   ${url}        
     Scroll Element Into View    //a[normalize-space()='Courses']
     Click Element    //a[normalize-space()='Courses']
     Scroll Element Into View    //a[normalize-space()='Projects']
