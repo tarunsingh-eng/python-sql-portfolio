@@ -4,9 +4,20 @@ Library     SeleniumLibrary
 *** Variables ***
 ${HEADLESS}     True
 
+*** keywords ***
+Open Chrome For CI
+    ${chrome_options}=      Evaluate
+sys.modules['selenium.webdriver'].ChromeOptions()       sys,    selenium.webdriver
+    Call method     ${chrome_options}     add_argument      --headless=new
+    Call method     ${chrome_options}     add_argument      --no-sandbox
+    Call method     ${chrome_options}     add_argument      --disable-dev-shm-usage
+    Call method     ${chrome_options}      add_argument     --disable-gpu
+    Create Webdriver       Chrome       options=${chrome_options}
+
 *** Test Cases ***
 Navigation Test
-    Open Browser    https:tarunsingh.co.in  chrome
+    Open Chrome For CI
+    Go To    https:tarunsingh.co.in
     Scroll Element Into View    //a[normalize-space()='Courses']
     Click Element   //a[normalize-space()='Courses']
     Scroll Element Into View      //a[normalize-space()='Projects']
