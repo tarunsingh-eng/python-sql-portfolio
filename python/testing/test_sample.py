@@ -66,7 +66,9 @@ def test_mysite(protected_driver):
     WebDriverWait(protected_driver, 10).until(lambda d: d.title != "")
     assert "Tarun Singh" in protected_driver.title
 
-
+    print("URL:", protected_driver.current_url)
+    print("TITLE:", protected_driver.title)
+    print("SOURCE:", protected_driver.page_source[:500])
     protected_driver.execute_script("window.scrollBy(0, document.body.scrollHeight)")
 
     element = WebDriverWait(protected_driver, 10).until( 
