@@ -23,13 +23,24 @@ def test_division():
     assert 5/2 == 2.5
 
 @pytest.fixture
-
 def driver():
+    options = Options()
+    options.add_argument("--headless=new")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+
+    d = webdriver.Chrome(optons=options)
+    yield d
+    d.quit()
+
+
+@pytest.fixture
+def protected_driver():
     secret = os.getenv("CF_TEST_SECRET")
     assert secret, "CF_TEST_SECRET is missing"
 
     options = Options()
-    options.add_argument("--headless")
+    options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
