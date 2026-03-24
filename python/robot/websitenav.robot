@@ -6,8 +6,7 @@ ${HEADLESS}     True
 
 *** keywords ***
 Open Chrome For CI
-    ${chrome_options}=      Evaluate
-sys.modules['selenium.webdriver'].ChromeOptions()       sys,    selenium.webdriver
+    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call method     ${chrome_options}     add_argument      --headless=new
     Call method     ${chrome_options}     add_argument      --no-sandbox
     Call method     ${chrome_options}     add_argument      --disable-dev-shm-usage
