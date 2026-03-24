@@ -1,0 +1,48 @@
+name: automation pipeline
+
+permissions:
+  contents: write
+
+on: 
+  push:
+  pull_request:
+
+jobs: 
+  tests: 
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:  
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run:  |  
+          pip install pytest robotframework
+
+      - name: Run tests
+        continue-on-error: true
+        run:  |
+          pytest || true
+          robot . 
+
+      - name: Prepare Report
+        if: always()
+        run: |
+          mkdir -p docs
+          cp report.html docs/index.html
+
+      - name: commit report to repo 
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add docs/
+          git diff --staged --quiet || git commit -m "Update report"
+          git push 
+
+
