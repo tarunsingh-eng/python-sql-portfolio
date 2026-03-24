@@ -40,7 +40,7 @@ def protected_driver():
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-
+    options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115 Safari/537.36");
     driver =webdriver.Chrome(options=options)
 
     driver.execute_cdp_cmd("Network.enable", {})
@@ -63,6 +63,14 @@ def test_google(driver):
 
 def test_mysite(protected_driver):
     protected_driver.get("https://tarunsingh.co.in/")
+    protected_driver.add_cookie({
+        "name":"CF_Authorization",
+        "value": os.getenv("CF_TEST_SECRET"),
+        "domain": ".tarunsingh.co.in",
+        "path": "/"
+    })
+    protected_driver.get("https://tarunsingh.co.in")
+
     WebDriverWait(protected_driver, 10).until(lambda d: d.title != "")
     assert "Tarun Singh" in protected_driver.title
 
