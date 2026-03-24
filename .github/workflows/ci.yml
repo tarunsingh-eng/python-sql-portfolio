@@ -33,12 +33,17 @@ jobs:
           sudo apt update
           sudo apt install -y chromium-browser  
 
-      - name: Run tests
+      - name: Run pytest
+        id:   pytest_steps
         continue-on-error: true
+        run: |
+            pytest python/testing/
+
+      - name: Run robot tests
+        if: always()
         env:
           CF_TEST_SECRET: ${{secrets.CF_TEST_SECRET}}
         run:  |
-          pytest python/testing/
           robot -d test-results -v HEADLESS:True -v CF_TEST_SECRET:$CF_TEST_SECRET python/robot/
       
       - name: Prepare Report
