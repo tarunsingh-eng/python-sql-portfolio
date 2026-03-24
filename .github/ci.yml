@@ -22,19 +22,19 @@ jobs:
 
       - name: Install dependencies
         run:  |  
-          pip install pytest robotframework
+          pip install pytest robotframework pytest robotframework-seleniumlibrary
 
       - name: Run tests
         continue-on-error: true
         run:  |
-          pytest || true
-          robot . 
+          pytest python/testing/
+          robot -d test-results -v HEADLESS:True python/robot/
 
       - name: Prepare Report
         if: always()
         run: |
           mkdir -p docs
-          cp report.html docs/index.html
+          cp test-results/report.html docs/index.html
 
       - name: commit report to repo 
         if: github.ref == 'refs/heads/main'

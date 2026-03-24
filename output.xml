@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.0 on win32)" generated="2026-03-24T08:34:37.583695" rpa="false" schemaversion="5">
+<suite id="s1" name="Python" source="C:\Users\tarun\Documents\Programs\python-sql-portfolio\python">
+<suite id="s1-s1" name="Robot" source="C:\Users\tarun\Documents\Programs\python-sql-portfolio\python\robot">
+<suite id="s1-s1-s1" name="Websitenav" source="C:\Users\tarun\Documents\Programs\python-sql-portfolio\python\robot\websitenav.robot">
+<test id="s1-s1-s1-t1" name="Navigation Test" line="8">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-24T08:34:37.845513" level="INFO">Opening browser 'chrome' to base url 'https:tarunsingh.co.in'.</msg>
+<arg>https:tarunsingh.co.in</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-24T08:34:37.845513" elapsed="3.465728"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Courses']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-03-24T08:34:41.311241" elapsed="0.272710"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-24T08:34:41.584958" level="INFO">Clicking element '//a[normalize-space()='Courses']'.</msg>
+<arg>//a[normalize-space()='Courses']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T08:34:41.583951" elapsed="0.809538"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Projects']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-03-24T08:34:42.393489" elapsed="0.286353"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-24T08:34:42.680837" level="INFO">Clicking element '//a[normalize-space()='Projects']'.</msg>
+<arg>//a[normalize-space()='Projects']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T08:34:42.679842" elapsed="0.748827"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Video Portfolio']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-03-24T08:34:43.428669" elapsed="0.283363"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-24T08:34:43.713027" level="INFO">Clicking element '//a[normalize-space()='Video Portfolio']'.</msg>
+<arg>//a[normalize-space()='Video Portfolio']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T08:34:43.713027" elapsed="1.877150"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Behind The Lens']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-03-24T08:34:45.591195" elapsed="0.304304"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-24T08:34:45.896499" level="INFO">Clicking element '//a[normalize-space()='Behind The Lens']'.</msg>
+<arg>//a[normalize-space()='Behind The Lens']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T08:34:45.895499" elapsed="0.917290"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Digital Art']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-03-24T08:34:46.813789" elapsed="0.275550"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-24T08:34:47.090337" level="INFO">Clicking element '//a[normalize-space()='Digital Art']'.</msg>
+<arg>//a[normalize-space()='Digital Art']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T08:34:47.089339" elapsed="0.909508"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='About']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-03-24T08:34:48.000126" elapsed="0.289169"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-24T08:34:48.290292" level="INFO">Clicking element '//a[normalize-space()='About']'.</msg>
+<arg>//a[normalize-space()='About']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T08:34:48.289295" elapsed="0.899139"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Gaming']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-03-24T08:34:49.188434" elapsed="0.282979"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-24T08:34:49.472413" level="INFO">Clicking element '//a[normalize-space()='Gaming']'.</msg>
+<arg>//a[normalize-space()='Gaming']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T08:34:49.471413" elapsed="0.855576"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Reviews']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-03-24T08:34:50.326989" elapsed="0.279106"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-24T08:34:50.607095" level="INFO">Clicking element '//a[normalize-space()='Reviews']'.</msg>
+<arg>//a[normalize-space()='Reviews']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T08:34:50.607095" elapsed="1.677158"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='blog']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-03-24T08:34:52.285303" elapsed="0.275748"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-24T08:34:52.561051" level="INFO">Clicking element '//a[normalize-space()='blog']'.</msg>
+<arg>//a[normalize-space()='blog']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T08:34:52.561051" elapsed="1.146197"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[@href='https://tarunsingh.co.in/'][normalize-space()='Tarun Singh']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-03-24T08:34:53.707248" elapsed="0.274405"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-24T08:34:53.982652" level="INFO">Clicking element '//a[@href='https://tarunsingh.co.in/'][normalize-space()='Tarun Singh']'.</msg>
+<arg>//a[@href='https://tarunsingh.co.in/'][normalize-space()='Tarun Singh']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T08:34:53.981653" elapsed="0.325461"/>
+</kw>
+<status status="PASS" start="2026-03-24T08:34:37.844504" elapsed="16.462610"/>
+</test>
+<status status="PASS" start="2026-03-24T08:34:37.604983" elapsed="16.703149"/>
+</suite>
+<status status="PASS" start="2026-03-24T08:34:37.602985" elapsed="16.706146"/>
+</suite>
+<status status="PASS" start="2026-03-24T08:34:37.584975" elapsed="16.724156"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Python" id="s1" pass="1" fail="0" skip="0">Python</stat>
+<stat name="Robot" id="s1-s1" pass="1" fail="0" skip="0">Python.Robot</stat>
+<stat name="Websitenav" id="s1-s1-s1" pass="1" fail="0" skip="0">Python.Robot.Websitenav</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

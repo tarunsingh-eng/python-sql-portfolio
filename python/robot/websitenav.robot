@@ -1,6 +1,9 @@
 *** Settings ***
 Library     SeleniumLibrary
 
+*** Variables ***
+${HEADLESS}     True
+
 *** Test Cases ***
 Navigation Test
     Open Browser    https:tarunsingh.co.in  chrome
