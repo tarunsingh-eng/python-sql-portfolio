@@ -39,7 +39,7 @@ jobs:
         env:
           CF_TEST_SECRET: ${{secrets.CF_TEST_SECRET}}
         run: |
-            pytest --vv -s -l python/testing/
+            pytest -vv -s -l python/testing/
 
       - name: Run robot tests
         if: always()
