@@ -41,8 +41,11 @@ jobs:
         if: always()
         run: |
           mkdir -p docs
-          cp test-results/report.html docs/index.html
-
+          if [ -f test-results/report.html ]; then
+            cp test-results/report.html docs/index.html
+          else
+            echo "<h1>Noreportgenerated</h1>" > docs/index.html
+            
       - name: commit report to repo 
         if: github.ref == 'refs/heads/main'
         run: |
