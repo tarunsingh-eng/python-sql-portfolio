@@ -10,6 +10,10 @@ on:
 jobs: 
   tests: 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./python
 
     steps: 
       - name: checkout code
@@ -44,7 +48,8 @@ jobs:
           if [ -f test-results/report.html ]; then
             cp test-results/report.html docs/index.html
           else
-            echo "<h1>Noreportgenerated</h1>" > docs/index.html
+            echo "<h1>No report generated</h1>" > docs/index.html
+          fi
 
       - name: commit report to repo 
         if: github.ref == 'refs/heads/main'
