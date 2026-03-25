@@ -8,12 +8,12 @@ ${CF_TEST_SECRET}     %{CF_TEST_SECRET}
 *** Keywords ***
 Open Chrome For CI
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    --headless
+    Call Method    ${chrome_options}    add_argument    --headless=new
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    --disable-gpu
 
-    ${ua}=         Set Variable         user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115 Safari/537.36
+    ${ua}=         Set Variable         --user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115 Safari/537.36
     Call Method    ${chrome_options}    add_argument    ${ua}    
 
     Create Webdriver    Chrome    options=${chrome_options}
@@ -25,7 +25,7 @@ Navigation Test
     Open Chrome For CI
 
     Go To       https://tarunsingh.co.in
-
+    Capture Page Screenshot    debug-cloudflare-block.png
    
     Add Cookie    CF_Authorization    ${CF_TEST_SECRET}    domain=.tarunsingh.co.in    path=/
 
