@@ -12,12 +12,12 @@ Open Chrome For CI
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    --disable-gpu
-    Call Method    ${chrome_options}    add_argument    --window-size=1920,1080
 
     ${ua}=         Set Variable         user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115 Safari/537.36
     Call Method    ${chrome_options}    add_argument    ${ua}    
 
     Create Webdriver    Chrome    options=${chrome_options}
+    Set Window Size    1920    1080
     Set Selenium Timeout    20s
 
 *** Test Cases ***
