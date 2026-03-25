@@ -8,7 +8,7 @@ ${CF_TEST_SECRET}     %{CF_TEST_SECRET}
 *** Keywords ***
 Open Chrome For CI
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    --HEADLESS
+    Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    --disable-gpu
