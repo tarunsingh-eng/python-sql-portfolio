@@ -3,6 +3,7 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${HEADLESS}    True
+${CF_TEST_SECRET}     %{CF_TEST_SECRET}  
 
 *** Keywords ***
 Open Chrome For CI
