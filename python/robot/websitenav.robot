@@ -24,13 +24,15 @@ Open Chrome For CI
 Navigation Test
     Open Chrome For CI
 
-    Go To       https://tarunsingh.co.in
-    Capture Page Screenshot    debug-cloudflare-block.png
+    Go To    https://tarunsingh.co.in/some-404-page
    
     Add Cookie    CF_Authorization    ${CF_TEST_SECRET}    domain=.tarunsingh.co.in    path=/
 
     ${url}=     Set Variable    https://tarunsingh.co.in/?ci_token=${CF_TEST_SECRET}
     Go To   ${url}
+
+    Go To       https://tarunsingh.co.in
+    Capture Page Screenshot    debug-cloudflare-block.png
 
     Wait Until Page Contains Element    //a[normalize-space()='Courses']    20s
     Scroll Element Into View    //a[normalize-space()='Courses']

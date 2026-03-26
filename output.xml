@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.0 on win32)" generated="2026-03-26T17:19:48.864330" rpa="false" schemaversion="5">
+<suite id="s1" name="Python" source="C:\Users\tarun\Documents\Programs\python-sql-portfolio\python">
+<suite id="s1-s1" name="Robot" source="C:\Users\tarun\Documents\Programs\python-sql-portfolio\python\robot">
+<suite id="s1-s1-s1" name="Websitenav" source="C:\Users\tarun\Documents\Programs\python-sql-portfolio\python\robot\websitenav.robot">
+<test id="s1-s1-s1-t1" name="Navigation Test" line="24">
+<kw name="Open Chrome For CI">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-26T17:19:49.324664" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002BD6741D310&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-26T17:19:49.324664" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-03-26T17:19:49.329714" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-03-26T17:19:49.329714" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-03-26T17:19:49.329714" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-03-26T17:19:49.329714" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-26T17:19:49.329714" level="INFO">${ua} = --user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115 Safari/537.36</msg>
+<var>${ua}</var>
+<arg>--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115 Safari/537.36</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-26T17:19:49.329714" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>${ua}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-03-26T17:19:49.329714" elapsed="0.001509"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-03-26T17:19:49.331223" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-03-26T17:19:49.331223" elapsed="2.865933"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1920</arg>
+<arg>1080</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2026-03-26T17:19:52.197156" elapsed="0.025961"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>20s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-03-26T17:19:52.223117" elapsed="0.005007"/>
+</kw>
+<status status="PASS" start="2026-03-26T17:19:49.320587" elapsed="2.907537"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-03-26T17:19:52.228124" level="INFO">Opening url 'https://tarunsingh.co.in'</msg>
+<arg>https://tarunsingh.co.in</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-03-26T17:19:52.228124" elapsed="6.090310"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-03-26T17:19:58.396035" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="debug-cloudflare-block.png"&gt;&lt;img src="debug-cloudflare-block.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>debug-cloudflare-block.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-03-26T17:19:58.318434" elapsed="0.077601"/>
+</kw>
+<kw name="Add Cookie" owner="SeleniumLibrary">
+<msg time="2026-03-26T17:19:58.397035" level="FAIL">Variable '${CF_TEST_SECRET}' not found.</msg>
+<arg>CF_Authorization</arg>
+<arg>${CF_TEST_SECRET}</arg>
+<arg>domain=.tarunsingh.co.in</arg>
+<arg>path=/</arg>
+<doc>Adds a cookie to your current session.</doc>
+<status status="FAIL" start="2026-03-26T17:19:58.397035" elapsed="0.000000">Variable '${CF_TEST_SECRET}' not found.</status>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${url}</var>
+<arg>https://tarunsingh.co.in/?ci_token=${CF_TEST_SECRET}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.398036" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.398036" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Courses']</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.398036" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Courses']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.398036" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Courses']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.398036" elapsed="0.000000"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.398036" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>TITLE=${title}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.399035" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.399035" elapsed="0.000000"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Projects']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.399035" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Projects']</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.399035" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Projects']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.399035" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Projects']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.399035" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Video Portfolio']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.399035" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Video Portfolio']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.399035" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Behind The Lens']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.399035" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Behind The Lens']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.399035" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Digital Art']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.399035" elapsed="0.001505"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Digital Art']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.400540" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='About']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.400540" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='About']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.400540" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Gaming']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.400540" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Gaming']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.400540" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Reviews']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.400540" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='Reviews']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.400540" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='blog']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.401585" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[normalize-space()='blog']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.401585" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[@href='https://tarunsingh.co.in/'][normalize-space()='Tarun Singh']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.401585" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[@href='https://tarunsingh.co.in/'][normalize-space()='Tarun Singh']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-26T17:19:58.401585" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2026-03-26T17:19:49.319588" elapsed="9.081997">Variable '${CF_TEST_SECRET}' not found.</status>
+</test>
+<status status="FAIL" start="2026-03-26T17:19:48.892454" elapsed="9.510168"/>
+</suite>
+<status status="FAIL" start="2026-03-26T17:19:48.891316" elapsed="9.512357"/>
+</suite>
+<status status="FAIL" start="2026-03-26T17:19:48.865331" elapsed="9.538342"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Python" id="s1" pass="0" fail="1" skip="0">Python</stat>
+<stat name="Robot" id="s1-s1" pass="0" fail="1" skip="0">Python.Robot</stat>
+<stat name="Websitenav" id="s1-s1-s1" pass="0" fail="1" skip="0">Python.Robot.Websitenav</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-03-26T17:19:49.318589" level="ERROR">Error in file 'C:\Users\tarun\Documents\Programs\python-sql-portfolio\python\robot\websitenav.robot' on line 6: Setting variable '${CF_TEST_SECRET}' failed: Environment variable '%{CF_TEST_SECRET}' not found.</msg>
+</errors>
+</robot>
