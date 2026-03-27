@@ -12,7 +12,6 @@ Title Should Not Be Empty
     Should Not Be Empty     ${title}
 Open Chrome For CI
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    --disable-gpu
@@ -49,13 +48,21 @@ Navigation Test
     Log To Console         HAS_JUST_A_MOMENT: ${has_just_a_moment}
     Log To Console         HAS_VERIFY_HUMAN: ${has_verify_human}
     Log To Console         HAS_ACCESS_DENIED: ${has_access_denied}
-    
+
+  
+
     ${courses_count}=      Get Element Count    xpath=//a[normalize-space()='Courses']
     Log To Console      Courses links found: ${courses_count}
 
-    Wait Until Page Contains Element    //a[normalize-space()='Courses']    20s
-    Scroll Element Into View    //a[normalize-space()='Courses']
-    Click Element    //a[normalize-space()='Courses']
+    Wait Until Page Contains Element    css://a[normalize-space()='Courses']    20s
+    Scroll Element Into View    css://a[normalize-space()='Courses']
+    Click Element    css://a[normalize-space()='Courses']
+
+    Add Cookie      CF_Authorization        ${CF_TEST_SECRET}       path=/      domain=.tarunsingh.co.in
+    ${cookies}=     Get Cookies
+    Log         COOKIES:    ${cookies}      console=True
+    
+    Reload Page
 
     ${title}=    Get Title
     Log To Console    TITLE=${title}
@@ -66,19 +73,118 @@ Navigation Test
     Scroll Element Into View    //a[normalize-space()='Projects']
     
     Click Element    //a[normalize-space()='Projects']
+
+    Add Cookie      CF_Authorization        ${CF_TEST_SECRET}       path=/      domain=.tarunsingh.co.in
+    ${cookies}=     Get Cookies
+    Log         COOKIES:    ${cookies}      console=True
+    
+    Reload Page
+
+    Wait Until Page Does Not Contain    Just a moment    30s
+    Wait Until Page Does Not Contain    verify you are human    30
+
     Scroll Element Into View    //a[normalize-space()='Video Portfolio']
     Click Element    //a[normalize-space()='Video Portfolio']
+
+
+
+
+    Add Cookie      CF_Authorization        ${CF_TEST_SECRET}       path=/      domain=.tarunsingh.co.in
+    ${cookies}=     Get Cookies
+    Log         COOKIES:    ${cookies}      console=True
+    
+    Reload Page
+
+    Wait Until Page Does Not Contain    Just a moment    30s
+    Wait Until Page Does Not Contain    verify you are human    30
+
+
+
+
+
     Scroll Element Into View    //a[normalize-space()='Behind The Lens']
     Click Element    //a[normalize-space()='Behind The Lens']
+
+    Add Cookie      CF_Authorization        ${CF_TEST_SECRET}       path=/      domain=.tarunsingh.co.in
+    ${cookies}=     Get Cookies
+    Log         COOKIES:    ${cookies}      console=True
+    
+    Reload Page
+
+    Wait Until Page Does Not Contain    Just a moment    30s
+    Wait Until Page Does Not Contain    verify you are human    30
+
+
+
     Scroll Element Into View    //a[normalize-space()='Digital Art']
     Click Element    //a[normalize-space()='Digital Art']
+
+
+    Add Cookie      CF_Authorization        ${CF_TEST_SECRET}       path=/      domain=.tarunsingh.co.in
+    ${cookies}=     Get Cookies
+    Log         COOKIES:    ${cookies}      console=True
+    
+    Reload Page
+
+    Wait Until Page Does Not Contain    Just a moment    30s
+    Wait Until Page Does Not Contain    verify you are human    30
+
+
+
     Scroll Element Into View    //a[normalize-space()='About']
     Click Element    //a[normalize-space()='About']
+
+    Add Cookie      CF_Authorization        ${CF_TEST_SECRET}       path=/      domain=.tarunsingh.co.in
+    ${cookies}=     Get Cookies
+    Log         COOKIES:    ${cookies}      console=True
+    
+    Reload Page
+
+    Wait Until Page Does Not Contain    Just a moment    30s
+    Wait Until Page Does Not Contain    verify you are human    30
+
+
+
     Scroll Element Into View    //a[normalize-space()='Gaming']
     Click Element    //a[normalize-space()='Gaming']
+
+    Add Cookie      CF_Authorization        ${CF_TEST_SECRET}       path=/      domain=.tarunsingh.co.in
+    ${cookies}=     Get Cookies
+    Log         COOKIES:    ${cookies}      console=True
+    
+    Reload Page
+
+    Wait Until Page Does Not Contain    Just a moment    30s
+    Wait Until Page Does Not Contain    verify you are human    30
+
+
+
     Scroll Element Into View    //a[normalize-space()='Reviews']
     Click Element    //a[normalize-space()='Reviews']
+
+    Add Cookie      CF_Authorization        ${CF_TEST_SECRET}       path=/      domain=.tarunsingh.co.in
+    ${cookies}=     Get Cookies
+    Log         COOKIES:    ${cookies}      console=True
+    
+    Reload Page
+
+    Wait Until Page Does Not Contain    Just a moment    30s
+    Wait Until Page Does Not Contain    verify you are human    30
+
+
+
     Scroll Element Into View    //a[normalize-space()='blog']
     Click Element    //a[normalize-space()='blog']
+
+    Add Cookie      CF_Authorization        ${CF_TEST_SECRET}       path=/      domain=.tarunsingh.co.in
+    ${cookies}=     Get Cookies
+    Log         COOKIES:    ${cookies}      console=True
+    
+    Reload Page
+
+    Wait Until Page Does Not Contain    Just a moment    30s
+    Wait Until Page Does Not Contain    verify you are human    30
+
+
     Scroll Element Into View    //a[@href='https://tarunsingh.co.in/'][normalize-space()='Tarun Singh']
     Click Element    //a[@href='https://tarunsingh.co.in/'][normalize-space()='Tarun Singh']
