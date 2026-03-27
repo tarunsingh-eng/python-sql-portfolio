@@ -6,6 +6,9 @@ ${HEADLESS}    True
 ${CF_TEST_SECRET}     %{CF_TEST_SECRET} 
 
 *** Keywords ***
+Title Should Not Be Empty
+    ${title}=    Get Title
+    Should Not Be Empty     ${title}
 Open Chrome For CI
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    --headless
@@ -23,13 +26,25 @@ Open Chrome For CI
 *** Test Cases ***
 Navigation Test
     Open Chrome For CI
+    Go To       https://tarunsingh.co.in/?ci_token=${CF_TEST_SECRET}
+     
+    Wait Until Keyword Succeeds        20s      1s      Title Should Not Be Empty
+    
+    ${title}=       Get Title
+    ${url}=         Get Location
+    ${html}=        Get Source
+    ${html_lower}=      Evaluate        """${html}""".lower()
 
-    ${url}=     Set Variable    https://tarunsingh.co.in/?ci_token=${CF_TEST_SECRET}
-    Go To   ${url}
-    Wait Until Location Contains        tarunsingh.co.in    20s
-   
-    Add Cookie    CF_Authorization    ${CF_TEST_SECRET}    domain=.tarunsingh.co.in    path=/       secure=${True}
-    Reload Page
+    Log To Console         Title: ${title}
+    Log To Console         URl: ${url}
+    Log To Console         HAS_COURSES_TEXT: ${"Courses" in """${html}"""}
+    Log To Console         HAS_CLOUDFLARE: ${"cloudflare" in $html_lower}
+    Log To Console         HAS_JUST_A_MOMENT: ${"just a moment" in $html_lower}
+    Log To Console         HAS_VERIFY_HUMAN: ${"verify you are human" in $html_lower}
+    Log To Console         HAS_ACCESS_DENIED: ${"access denied" in $html_lower}
+    
+    ${courses_count}=      Get Element Count    xpath=//a[normalize-space()='Courses']
+    Log To Console      Courses links found: ${courses_count}
 
     Wait Until Page Contains Element    //a[normalize-space()='Courses']    20s
     Scroll Element Into View    //a[normalize-space()='Courses']
