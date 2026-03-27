@@ -23,7 +23,7 @@ Open Chrome For CI
 *** Test Cases ***
 Navigation Test
     Open Chrome For CI
-    
+
     ${url}=     Set Variable    https://tarunsingh.co.in/?ci_token=${CF_TEST_SECRET}
     Go To   ${url}
     Wait Until Location Contains        tarunsingh.co.in    20s
@@ -37,7 +37,6 @@ Navigation Test
 
     ${title}=    Get Title
     Log To Console    TITLE=${title}
-    Capture Page Screenshot
 
     Page Should Contain Element    //a[normalize-space()='Projects']
 
