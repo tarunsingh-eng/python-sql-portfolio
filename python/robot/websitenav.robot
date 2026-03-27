@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    String
 
 *** Variables ***
 ${HEADLESS}    True
@@ -33,15 +34,21 @@ Navigation Test
     ${title}=       Get Title
     ${url}=         Get Location
     ${html}=        Get Source
-    ${html_lower}=      Evaluate        """${html}""".lower()
+    ${html_lower}=      Convert To Lower Case        ${html}
+
+    ${has_courses}=     Evaluate       "Courses" in $html
+    ${has_cloudflare}=  Evaluate        "cloudflare" in $html_lower
+    ${has_just_a_moment}=   Evaluate    "just a moment" in $html_lower
+    ${has_verify_human}=    Evaluate    "verify you are human" in $html_lower
+    ${has_access_denied}=   Evaluate    "access denied" in $html_lower
 
     Log To Console         Title: ${title}
     Log To Console         URl: ${url}
-    Log To Console         HAS_COURSES_TEXT: ${"Courses" in """${html}"""}
-    Log To Console         HAS_CLOUDFLARE: ${"cloudflare" in $html_lower}
-    Log To Console         HAS_JUST_A_MOMENT: ${"just a moment" in $html_lower}
-    Log To Console         HAS_VERIFY_HUMAN: ${"verify you are human" in $html_lower}
-    Log To Console         HAS_ACCESS_DENIED: ${"access denied" in $html_lower}
+    Log To Console         HAS_COURSES_TEXT: ${has_courses}
+    Log To Console         HAS_CLOUDFLARE: ${has_cloudflare}
+    Log To Console         HAS_JUST_A_MOMENT: ${has_just_a_moment}
+    Log To Console         HAS_VERIFY_HUMAN: ${has_verify_human}
+    Log To Console         HAS_ACCESS_DENIED: ${has_access_denied}
     
     ${courses_count}=      Get Element Count    xpath=//a[normalize-space()='Courses']
     Log To Console      Courses links found: ${courses_count}
