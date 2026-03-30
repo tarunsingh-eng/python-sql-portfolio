@@ -63,6 +63,10 @@ Navigation Test
     Scroll Element Into View    xpath=//a[normalize-space()='Courses']
     Click Element    xpath=//a[normalize-space()='Courses']
 
+    Wait Until Page Does Not Contain    Just a moment    10s
+    Title Should Not Be    Just a moment...
+    Wait Until Location Contains    /courses    20s
+
     ${title}=    Get Title
     Log To Console    TITLE=${title}
 
