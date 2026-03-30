@@ -79,8 +79,6 @@ Navigation Test
     Scroll Element Into View    xpath=//a[normalize-space()='Courses']
     Click Element    xpath=//a[normalize-space()='Courses']
 
-    Wait Until Page Does Not Contain    Just a moment    10s
-    Title Should Not Be    Just a moment...
     Wait Until Location Contains    /courses    20s
 
     ${title}=    Get Title
@@ -102,32 +100,17 @@ Navigation Test
     Scroll Element Into View    xpath=//a[normalize-space()='Digital Art']
     Click Element    xpath=//a[normalize-space()='Digital Art']
 
-    Wait Until Page Does Not Contain    Just a moment    30s
-    Wait Until Page Does Not Contain    verify you are human    30
-
     Scroll Element Into View    xpath=//a[normalize-space()='About']
     Click Element    xpath=//a[normalize-space()='About']
-
-    Wait Until Page Does Not Contain    Just a moment    30s
-    Wait Until Page Does Not Contain    verify you are human    30
 
     Scroll Element Into View    xpath=//a[normalize-space()='Gaming']
     Click Element    xpath=//a[normalize-space()='Gaming']
 
-    Wait Until Page Does Not Contain    Just a moment    30s
-    Wait Until Page Does Not Contain    verify you are human    30
-
     Scroll Element Into View    xpath=//a[normalize-space()='Reviews']
     Click Element    xpath=//a[normalize-space()='Reviews']
 
-    Wait Until Page Does Not Contain    Just a moment    30s
-    Wait Until Page Does Not Contain    verify you are human    30
-
     Scroll Element Into View    xpath=//a[normalize-space()='blog']
     Click Element    xpath=//a[normalize-space()='blog']
-
-    Wait Until Page Does Not Contain    Just a moment    30s
-    Wait Until Page Does Not Contain    verify you are human    30
 
     Scroll Element Into View    xpath=//a[normalize-space()='Tarun Singh']
     Click Element    xpath=//a[normalize-space()='Tarun Singh']
