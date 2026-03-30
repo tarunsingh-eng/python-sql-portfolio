@@ -12,15 +12,15 @@ Title Should Not Be Empty
     Should Not Be Empty     ${title}
 Open Chrome For CI
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    "--headless\=new"
-    Call Method    ${chrome_options}    add_argument    "--window-size\=1920,1080"
-    Call Method    ${chrome_options}    add_argument    "--no-sandbox"
-    Call Method    ${chrome_options}    add_argument    "--disable-dev-shm-usage"
-    Call Method    ${chrome_options}    add_argument    "--disable-gpu"
-    Call Method    ${chrome_options}    add_argument    "--remote-debugging-port\=9222"
-    Call Method    ${chrome_options}    add_argument    "--disable-blink-features\=AutomationControlled"
-    Call Method    ${chrome_options}    add_argument    "--disable-features=IsolateOrigins,site-per-process"
-    Call Method    ${chrome_options}    add_argument    "--disable-site-isolation-trials"
+    Call Method    ${chrome_options}    add_argument    --headless\=new
+    Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
+    Call Method    ${chrome_options}    add_argument    --no-sandbox
+    Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
+    Call Method    ${chrome_options}    add_argument    --disable-gpu
+    Call Method    ${chrome_options}    add_argument    --remote-debugging-port\=9222
+    Call Method    ${chrome_options}    add_argument    --disable-blink-features\=AutomationControlled
+    Call Method    ${chrome_options}    add_argument    --disable-features=IsolateOrigins,site-per-process
+    Call Method    ${chrome_options}    add_argument    --disable-site-isolation-trials
 
     ${ua}=         Set Variable         --user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115 Safari/537.36
     Call Method    ${chrome_options}    add_argument    ${ua}    
