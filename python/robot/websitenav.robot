@@ -18,7 +18,7 @@ Open Chrome For CI
     Call Method    ${chrome_options}    add_argument    "--disable-dev-shm-usage"
     Call Method    ${chrome_options}    add_argument    "--disable-gpu"
     Call Method    ${chrome_options}    add_argument    "--remote-debugging-port\=9222"
-    Call Method    ${chrome_options}    add_argument    "--disable-blink-features=AutomationControlled"
+    Call Method    ${chrome_options}    add_argument    "--disable-blink-features\=AutomationControlled"
     Call Method    ${chrome_options}    add_argument    "--disable-features=IsolateOrigins,site-per-process"
     Call Method    ${chrome_options}    add_argument    "--disable-site-isolation-trials"
 
@@ -64,8 +64,8 @@ Navigation Test
     ${courses_count}=      Get Element Count    xpath=//a[normalize-space()='Courses']
     Log To Console      Courses links found: ${courses_count}
 
-    Wait Until Page Contains Element    xpath://a[normalize-space()='Courses']    20s
-    Scroll Element Into View    xpath://a[normalize-space()='Courses']
+    Wait Until Page Contains Element    xpath=//a[normalize-space()='Courses']    20s
+    Scroll Element Into View    xpath=//a[normalize-space()='Courses']
     Click Element    xpath=//a[normalize-space()='Courses']
 
     ${title}=    Get Title
