@@ -5,6 +5,7 @@ Library    String
 *** Variables ***
 ${HEADLESS}    True
 ${CF_TEST_SECRET}     %{CF_TEST_SECRET} 
+${BASE_URL}           https://tarunsingh.co.in
 
 *** Keywords ***
 Title Should Not Be Empty
@@ -26,14 +27,29 @@ Open Chrome For CI
     Call Method    ${chrome_options}    add_argument    ${ua}    
 
     Create Webdriver    Chrome    options=${chrome_options}
-    Execute Javascript    Object.defineProperty(navigator, 'webdriver', {get: () => undefined})
     Set Window Size    1920    1080
     Set Selenium Timeout    20s
+
+    ${sl}=      Get Library Instance        SeleniumLibrary
+    ${driver}=      Evaluate        $sl.driver
+    ${empty}=       Evaluate        {}
+    ${headers}=     Evaluate        {"x-ci-secret": $CF_TEST_SECRET}
+    ${payload}=     Evaluate        {"headers": $headers}
+
+    Call Method     ${driver}       execute_cdp_cmd     Network.enable      ${empty}
+    Call Method     ${driver}       execute_cdp_cmd     Network.setExtraHTTPHeaders     ${payload}
+
+Click Nav Link
+    [Arguments]     ${text}
+    ${el}=         Get WebElement       xpath=//a[normalize-space()='${text}']
+    Execute Javascript      Arguments[0].ScrollIntoView({block: 'center', inline:'center'}); Arguments  ${el}
+    Sleep      1s 
+    Execute Javascript          arguments[0].click();       ARGUMENTS       ${el}
 
 *** Test Cases ***
 Navigation Test
     Open Chrome For CI
-    Go To       https://tarunsingh.co.in/?ci_token=${CF_TEST_SECRET}
+    Go To       ${BASE_URL}/
      
     Wait Until Page Contains Element    xpath=//a[normalize-space()='Courses']    20s
 
