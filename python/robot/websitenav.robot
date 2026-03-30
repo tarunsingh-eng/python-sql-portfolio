@@ -75,6 +75,9 @@ Navigation Test
     ${courses_count}=      Get Element Count    xpath=//a[normalize-space()='Courses']
     Log To Console      Courses links found: ${courses_count}
 
+    ${projects_count}=      Get Element Count    xpath=//a[normalize-space()='Projects']
+    Log To Console      Courses links found: ${projects_count}
+
     Wait Until Page Contains Element    xpath=//a[normalize-space()='Courses']    20s
     Scroll Element Into View    xpath=//a[normalize-space()='Courses']
     Click Element    xpath=//a[normalize-space()='Courses']
