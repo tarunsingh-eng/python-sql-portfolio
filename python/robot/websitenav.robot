@@ -22,7 +22,6 @@ Open Chrome For CI
     Call Method    ${chrome_options}    add_argument    "--disable-features=IsolateOrigins,site-per-process"
     Call Method    ${chrome_options}    add_argument    "--disable-site-isolation-trials"
 
-
     ${ua}=         Set Variable         --user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115 Safari/537.36
     Call Method    ${chrome_options}    add_argument    ${ua}    
 
@@ -43,13 +42,6 @@ Navigation Test
     Sleep    1s
     Execute Javascript    window.scrollTo(0, 0)
 
-
-    Add Cookie      CF_Authorization        ${CF_TEST_SECRET}       path=/      domain=.tarunsingh.co.in
-    ${cookies}=     Get Cookies
-    Log         COOKIES:    ${cookies}      console=True
-    
-    Reload Page
-    
     ${title}=       Get Title
     ${url}=         Get Location
     ${html}=        Get Source
@@ -69,93 +61,58 @@ Navigation Test
     Log To Console         HAS_VERIFY_HUMAN: ${has_verify_human}
     Log To Console         HAS_ACCESS_DENIED: ${has_access_denied}
 
-  
-
     ${courses_count}=      Get Element Count    xpath=//a[normalize-space()='Courses']
     Log To Console      Courses links found: ${courses_count}
 
-    Wait Until Page Contains Element    css://a[normalize-space()='Courses']    20s
-    Scroll Element Into View    css://a[normalize-space()='Courses']
-    Click Element    css://a[normalize-space()='Courses']
-
-
+    Wait Until Page Contains Element    xpath://a[normalize-space()='Courses']    20s
+    Scroll Element Into View    xpath://a[normalize-space()='Courses']
+    Click Element    xpath=//a[normalize-space()='Courses']
 
     ${title}=    Get Title
     Log To Console    TITLE=${title}
 
-    Page Should Contain Element    //a[normalize-space()='Projects']
+    Page Should Contain Element    xpath=//a[normalize-space()='Projects']
 
-    Wait Until Page Contains Element    //a[normalize-space()='Projects']    20s
-    Scroll Element Into View    //a[normalize-space()='Projects']
+    Wait Until Page Contains Element    xpath=//a[normalize-space()='Projects']    20s
+    Scroll Element Into View    xpath=//a[normalize-space()='Projects']
     
-    Click Element    //a[normalize-space()='Projects']
+    Click Element    xpath=//a[normalize-space()='Projects']
 
+    Scroll Element Into View    xpath=//a[normalize-space()='Video Portfolio']
+    Click Element    xpath=//a[normalize-space()='Video Portfolio']
 
+    Scroll Element Into View    xpath=//a[normalize-space()='Behind The Lens']
+    Click Element    xpath=//a[normalize-space()='Behind The Lens']
 
-    Scroll Element Into View    //a[normalize-space()='Video Portfolio']
-    Click Element    //a[normalize-space()='Video Portfolio']
-
-
-
-
-
-
-
-
-    Scroll Element Into View    //a[normalize-space()='Behind The Lens']
-    Click Element    //a[normalize-space()='Behind The Lens']
-
-
-
-
-    Scroll Element Into View    //a[normalize-space()='Digital Art']
-    Click Element    //a[normalize-space()='Digital Art']
-
-
-
+    Scroll Element Into View    xpath=//a[normalize-space()='Digital Art']
+    Click Element    xpath=//a[normalize-space()='Digital Art']
 
     Wait Until Page Does Not Contain    Just a moment    30s
     Wait Until Page Does Not Contain    verify you are human    30
 
-
-
-    Scroll Element Into View    //a[normalize-space()='About']
-    Click Element    //a[normalize-space()='About']
-
-
+    Scroll Element Into View    xpath://a[normalize-space()='About']
+    Click Element    xpath=//a[normalize-space()='About']
 
     Wait Until Page Does Not Contain    Just a moment    30s
     Wait Until Page Does Not Contain    verify you are human    30
 
-
-
-    Scroll Element Into View    //a[normalize-space()='Gaming']
-    Click Element    //a[normalize-space()='Gaming']
-
+    Scroll Element Into View    xpath://a[normalize-space()='Gaming']
+    Click Element    xpath//a[normalize-space()='Gaming']
 
     Wait Until Page Does Not Contain    Just a moment    30s
     Wait Until Page Does Not Contain    verify you are human    30
 
-
-
-    Scroll Element Into View    //a[normalize-space()='Reviews']
-    Click Element    //a[normalize-space()='Reviews']
-
-
+    Scroll Element Into View    xpath=//a[normalize-space()='Reviews']
+    Click Element    xpath=//a[normalize-space()='Reviews']
 
     Wait Until Page Does Not Contain    Just a moment    30s
     Wait Until Page Does Not Contain    verify you are human    30
 
-
-
-    Scroll Element Into View    //a[normalize-space()='blog']
-    Click Element    //a[normalize-space()='blog']
-
-
+    Scroll Element Into View    xpath=//a[normalize-space()='blog']
+    Click Element    xpath=//a[normalize-space()='blog']
 
     Wait Until Page Does Not Contain    Just a moment    30s
     Wait Until Page Does Not Contain    verify you are human    30
 
-
-    Scroll Element Into View    //a[@href='https://tarunsingh.co.in/'][normalize-space()='Tarun Singh']
-    Click Element    //a[@href='https://tarunsingh.co.in/'][normalize-space()='Tarun Singh']
+    Scroll Element Into View    xpath=//a[normalize-space()='Tarun Singh']
+    Click Element    xpath=//a[normalize-space()='Tarun Singh']
