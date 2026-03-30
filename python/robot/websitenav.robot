@@ -37,11 +37,6 @@ Navigation Test
      
     Wait Until Page Contains Element    xpath=//a[normalize-space()='Courses']    20s
 
-    Sleep    2s
-    Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
-    Sleep    1s
-    Execute Javascript    window.scrollTo(0, 0)
-
     ${title}=       Get Title
     ${url}=         Get Location
     ${html}=        Get Source
@@ -90,14 +85,14 @@ Navigation Test
     Wait Until Page Does Not Contain    Just a moment    30s
     Wait Until Page Does Not Contain    verify you are human    30
 
-    Scroll Element Into View    xpath://a[normalize-space()='About']
+    Scroll Element Into View    xpath=//a[normalize-space()='About']
     Click Element    xpath=//a[normalize-space()='About']
 
     Wait Until Page Does Not Contain    Just a moment    30s
     Wait Until Page Does Not Contain    verify you are human    30
 
-    Scroll Element Into View    xpath://a[normalize-space()='Gaming']
-    Click Element    xpath//a[normalize-space()='Gaming']
+    Scroll Element Into View    xpath=//a[normalize-space()='Gaming']
+    Click Element    xpath=//a[normalize-space()='Gaming']
 
     Wait Until Page Does Not Contain    Just a moment    30s
     Wait Until Page Does Not Contain    verify you are human    30
