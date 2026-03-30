@@ -42,9 +42,8 @@ Open Chrome For CI
 Click Nav Link
     [Arguments]     ${text}
     ${el}=         Get WebElement       xpath=//a[normalize-space()='${text}']
-    Execute Javascript      Arguments[0].ScrollIntoView({block: 'center', inline:'center'}); Arguments  ${el}
-    Sleep      1s 
-    Execute Javascript          arguments[0].click();       ARGUMENTS       ${el}
+    Execute Javascript    arguments[0].scrollIntoView({block: 'center', inline: 'center'});    ARGUMENTS    ${el}
+    Execute Javascript    arguments[0].click();    ARGUMENTS    ${el}
 
 *** Test Cases ***
 Navigation Test
@@ -76,16 +75,25 @@ Navigation Test
     Log To Console      Courses links found: ${courses_count}
 
     ${projects_count}=      Get Element Count    xpath=//a[normalize-space()='Projects']
-    Log To Console      Courses links found: ${projects_count}
+    Log To Console      Projects links found: ${projects_count}
 
     Wait Until Page Contains Element    xpath=//a[normalize-space()='Courses']    20s
     Scroll Element Into View    xpath=//a[normalize-space()='Courses']
     Click Element    xpath=//a[normalize-space()='Courses']
 
     Wait Until Location Contains    /courses    20s
+    
+    ${projects_count}=      Get Element Count    xpath=//a[normalize-space()='Projects']
+    Log To Console      Projects links found: ${projects_count}
 
     ${title}=    Get Title
-    Log To Console    TITLE=${title}
+    Log To Console         TITLE=${title}
+    Log To Console         URl: ${url}
+    Log To Console         HAS_PROJECTS_TEXT: ${has_projects}
+    Log To Console         HAS_CLOUDFLARE: ${has_cloudflare}
+    Log To Console         HAS_JUST_A_MOMENT: ${has_just_a_moment}
+    Log To Console         HAS_VERIFY_HUMAN: ${has_verify_human}
+    Log To Console         HAS_ACCESS_DENIED: ${has_access_denied}
 
     Page Should Contain Element    xpath=//a[normalize-space()='Projects']
 
