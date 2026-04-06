@@ -1,144 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.11.0 on win32)" generated="2026-04-06T16:58:08.515363" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.11.0 on win32)" generated="2026-04-06T17:07:59.145622" rpa="false" schemaversion="5">
 <suite id="s1" name="Websitenav" source="C:\Users\tarun\Documents\Programs\python-sql-portfolio\python\robot\websitenav.robot">
 <test id="s1-t1" name="Navigation Test" line="54">
 <kw name="Open Chrome For CI">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-04-06T16:58:08.789016" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000204CC3E9650&gt;</msg>
+<msg time="2026-04-06T17:07:59.422152" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000021F51E09390&gt;</msg>
 <var>${chrome_options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-04-06T16:58:08.788015" elapsed="0.001001"/>
+<status status="PASS" start="2026-04-06T17:07:59.422152" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--headless\=new</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-04-06T16:58:08.789016" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-06T17:07:59.422152" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--window-size\=1920,1080</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-04-06T16:58:08.789016" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-06T17:07:59.422152" elapsed="0.001000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--no-sandbox</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-04-06T16:58:08.789016" elapsed="0.001000"/>
+<status status="PASS" start="2026-04-06T17:07:59.423152" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-dev-shm-usage</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-04-06T16:58:08.790016" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-06T17:07:59.423152" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-gpu</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-04-06T16:58:08.790016" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-06T17:07:59.423152" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--remote-debugging-port\=9222</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-04-06T16:58:08.790016" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-06T17:07:59.424152" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-blink-features\=AutomationControlled</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-04-06T16:58:08.790016" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-06T17:07:59.424152" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-features\=IsolateOrigins,site-per-process</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-04-06T16:58:08.790016" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-06T17:07:59.424152" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-site-isolation-trials</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-04-06T16:58:08.791015" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-06T17:07:59.424152" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T16:58:08.791015" level="INFO">${ua} = --user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115 Safari/537.36</msg>
+<msg time="2026-04-06T17:07:59.424152" level="INFO">${ua} = --user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115 Safari/537.36</msg>
 <var>${ua}</var>
 <arg>--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115 Safari/537.36</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T16:58:08.791015" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-06T17:07:59.424152" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>${ua}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-04-06T16:58:08.791015" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-06T17:07:59.424152" elapsed="0.000000"/>
 </kw>
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2026-04-06T16:58:08.791015" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2026-04-06T17:07:59.424152" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>options=${chrome_options}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2026-04-06T16:58:08.791015" elapsed="1.014123"/>
+<status status="PASS" start="2026-04-06T17:07:59.424152" elapsed="1.224954"/>
 </kw>
 <kw name="Set Window Size" owner="SeleniumLibrary">
 <arg>1920</arg>
 <arg>1080</arg>
 <doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" start="2026-04-06T16:58:09.805138" elapsed="0.003000"/>
+<status status="PASS" start="2026-04-06T17:08:00.649106" elapsed="0.003377"/>
 </kw>
 <kw name="Set Selenium Timeout" owner="SeleniumLibrary">
 <arg>20s</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" start="2026-04-06T16:58:09.808138" elapsed="0.001001"/>
+<status status="PASS" start="2026-04-06T17:08:00.652483" elapsed="0.000995"/>
 </kw>
 <kw name="Get Library Instance" owner="BuiltIn">
-<msg time="2026-04-06T16:58:09.809139" level="INFO">${sl} = &lt;SeleniumLibrary.SeleniumLibrary object at 0x00000204CBE2A850&gt;</msg>
+<msg time="2026-04-06T17:08:00.653478" level="INFO">${sl} = &lt;SeleniumLibrary.SeleniumLibrary object at 0x0000021F5107A790&gt;</msg>
 <var>${sl}</var>
 <arg>SeleniumLibrary</arg>
 <doc>Returns the currently active instance of the specified library.</doc>
-<status status="PASS" start="2026-04-06T16:58:09.809139" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-06T17:08:00.653478" elapsed="0.000000"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-04-06T16:58:09.811136" level="INFO">${driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="385f6a332638a65288ad9f9b24fa7cdb")&gt;</msg>
+<msg time="2026-04-06T17:08:00.656188" level="INFO">${driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="d4e8a9a27e5c0dea02c3cc6e16c8849e")&gt;</msg>
 <var>${driver}</var>
 <arg>$sl.driver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-04-06T16:58:09.810137" elapsed="0.000999"/>
+<status status="PASS" start="2026-04-06T17:08:00.654677" elapsed="0.001511"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-04-06T16:58:09.812135" level="INFO">${empty} = {}</msg>
+<msg time="2026-04-06T17:08:00.656188" level="INFO">${empty} = {}</msg>
 <var>${empty}</var>
 <arg>{}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-04-06T16:58:09.811136" elapsed="0.000999"/>
+<status status="PASS" start="2026-04-06T17:08:00.656188" elapsed="0.001001"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-04-06T16:58:09.812135" level="FAIL">Evaluating expression '{"x-ci-secret": $CF_TEST_SECRET}' failed: Variable '$CF_TEST_SECRET' not found.</msg>
+<msg time="2026-04-06T17:08:00.657189" level="FAIL">Evaluating expression '{"x-ci-secret": $CF_TEST_SECRET}' failed: Variable '$CF_TEST_SECRET' not found.</msg>
 <var>${headers}</var>
 <arg>{"x-ci-secret": $CF_TEST_SECRET}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="FAIL" start="2026-04-06T16:58:09.812135" elapsed="0.000000">Evaluating expression '{"x-ci-secret": $CF_TEST_SECRET}' failed: Variable '$CF_TEST_SECRET' not found.</status>
+<status status="FAIL" start="2026-04-06T17:08:00.657189" elapsed="0.000000">Evaluating expression '{"x-ci-secret": $CF_TEST_SECRET}' failed: Variable '$CF_TEST_SECRET' not found.</status>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${payload}</var>
 <arg>{"headers": $headers}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.812135" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.657189" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${driver}</arg>
@@ -146,7 +146,7 @@
 <arg>Network.enable</arg>
 <arg>${empty}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.813140" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.657189" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${driver}</arg>
@@ -154,262 +154,268 @@
 <arg>Network.setExtraHTTPHeaders</arg>
 <arg>${payload}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.813140" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.657189" elapsed="0.000000"/>
 </kw>
-<status status="FAIL" start="2026-04-06T16:58:08.788015" elapsed="1.025125">Evaluating expression '{"x-ci-secret": $CF_TEST_SECRET}' failed: Variable '$CF_TEST_SECRET' not found.</status>
+<status status="FAIL" start="2026-04-06T17:07:59.421009" elapsed="1.237183">Evaluating expression '{"x-ci-secret": $CF_TEST_SECRET}' failed: Variable '$CF_TEST_SECRET' not found.</status>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
 <arg>${BASE_URL}/?cf_secret=${CF_TEST_SECRET}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.813140" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.658192" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>xpath=//a[normalize-space()='Courses']</arg>
 <arg>20s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.813140" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.658192" elapsed="0.000000"/>
 </kw>
 <kw name="Get Title" owner="SeleniumLibrary">
 <var>${title}</var>
 <doc>Returns the title of the current page.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.813140" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.658192" elapsed="0.000000"/>
 </kw>
 <kw name="Get Location" owner="SeleniumLibrary">
 <var>${url}</var>
 <doc>Returns the current browser window URL.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.813140" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.658192" elapsed="0.000000"/>
 </kw>
 <kw name="Get Source" owner="SeleniumLibrary">
 <var>${html}</var>
 <doc>Returns the entire HTML source of the current page or frame.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.814468" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.659196" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To Lower Case" owner="String">
 <var>${html_lower}</var>
 <arg>${html}</arg>
 <doc>Converts string to lower case.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.814468" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.659196" elapsed="0.000000"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${has_courses}</var>
 <arg>"Courses" in $html</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.814468" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.659196" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${has_projects}</var>
+<arg>"Projects" in $html</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-04-06T17:08:00.659196" elapsed="0.000000"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${has_cloudflare}</var>
 <arg>"cloudflare" in $html_lower</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.814468" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.659196" elapsed="0.000993"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${has_just_a_moment}</var>
 <arg>"just a moment" in $html_lower</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.815467" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.660189" elapsed="0.000000"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${has_verify_human}</var>
 <arg>"verify you are human" in $html_lower</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.815467" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.660189" elapsed="0.000000"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${has_access_denied}</var>
 <arg>"access denied" in $html_lower</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.815467" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.660189" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Title: ${title}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.815467" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.660189" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>URl: ${url}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.815467" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.661191" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>HAS_COURSES_TEXT: ${has_courses}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.815467" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.661191" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>HAS_Project_TEXT: ${has_projects}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-04-06T17:08:00.661191" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>HAS_CLOUDFLARE: ${has_cloudflare}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.815467" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.661191" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>HAS_JUST_A_MOMENT: ${has_just_a_moment}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.815467" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.661191" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>HAS_VERIFY_HUMAN: ${has_verify_human}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.816590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.661191" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>HAS_ACCESS_DENIED: ${has_access_denied}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.816590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.661191" elapsed="0.000000"/>
 </kw>
 <kw name="Get Element Count" owner="SeleniumLibrary">
 <var>${courses_count}</var>
 <arg>xpath=//a[normalize-space()='Courses']</arg>
 <doc>Returns the number of elements matching ``locator``.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.816590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.662188" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Courses links found: ${courses_count}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.816590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.662188" elapsed="0.000000"/>
 </kw>
 <kw name="Get Element Count" owner="SeleniumLibrary">
 <var>${projects_count}</var>
 <arg>xpath=//a[normalize-space()='Projects']</arg>
 <doc>Returns the number of elements matching ``locator``.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.816590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.662391" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Projects links found: ${projects_count}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.816590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.662391" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>xpath=//a[normalize-space()='Courses']</arg>
 <arg>20s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.817590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.662767" elapsed="0.000000"/>
 </kw>
 <kw name="Scroll Element Into View" owner="SeleniumLibrary">
 <arg>xpath=//a[normalize-space()='Courses']</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.817590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.662767" elapsed="0.000000"/>
 </kw>
 <kw name="Jump To">
 <arg>Courses</arg>
-<status status="NOT RUN" start="2026-04-06T16:58:09.817590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.662767" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Location Contains" owner="SeleniumLibrary">
 <arg>/courses</arg>
 <arg>20s</arg>
 <doc>Waits until the current URL contains ``expected``.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.817590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.662767" elapsed="0.000000"/>
 </kw>
 <kw name="Get Element Count" owner="SeleniumLibrary">
 <var>${projects_count}</var>
 <arg>xpath=//a[normalize-space()='Projects']</arg>
 <doc>Returns the number of elements matching ``locator``.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.817590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.662767" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Projects links found: ${projects_count}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.818590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.662767" elapsed="0.000000"/>
 </kw>
 <kw name="Get Title" owner="SeleniumLibrary">
 <var>${title}</var>
 <doc>Returns the title of the current page.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.818590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.663755" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>TITLE=${title}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.818590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.663755" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>URl: ${url}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.818590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.663755" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>HAS_PROJECTS_TEXT: ${has_projects}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.818590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.663755" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>HAS_CLOUDFLARE: ${has_cloudflare}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.818590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.663755" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>HAS_JUST_A_MOMENT: ${has_just_a_moment}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.818590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.663755" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>HAS_VERIFY_HUMAN: ${has_verify_human}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.818590" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.663755" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>HAS_ACCESS_DENIED: ${has_access_denied}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.819591" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.663755" elapsed="0.001168"/>
 </kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<arg>xpath=//a[normalize-space()='Projects']</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.819591" elapsed="0.000000"/>
+<kw name="Get Source" owner="SeleniumLibrary">
+<var>${html}</var>
+<doc>Returns the entire HTML source of the current page or frame.</doc>
+<status status="NOT RUN" start="2026-04-06T17:08:00.664923" elapsed="0.000000"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>xpath=//a[normalize-space()='Projects']</arg>
-<arg>20s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.819591" elapsed="0.000000"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>xpath=//a[normalize-space()='Projects']</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.820588" elapsed="0.000000"/>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${has_projects}</var>
+<arg>"Projects" in $html</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-04-06T17:08:00.664923" elapsed="0.000000"/>
 </kw>
 <kw name="Jump To">
 <arg>Projects</arg>
-<status status="NOT RUN" start="2026-04-06T16:58:09.820588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.664923" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>xpath=//a[normalize-space()='Video Portfolio']</arg>
 <arg>20s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2026-04-06T16:58:09.820588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.664923" elapsed="0.000000"/>
 </kw>
 <kw name="Jump To">
 <arg>Video Portfolio</arg>
-<status status="NOT RUN" start="2026-04-06T16:58:09.820588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.664923" elapsed="0.000000"/>
 </kw>
 <kw name="Jump To">
 <arg>Behind The Lens</arg>
-<status status="NOT RUN" start="2026-04-06T16:58:09.820588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.664923" elapsed="0.000000"/>
 </kw>
 <kw name="Jump To">
 <arg>Digital Art</arg>
-<status status="NOT RUN" start="2026-04-06T16:58:09.821588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.664923" elapsed="0.000000"/>
 </kw>
 <kw name="Jump To">
 <arg>About</arg>
-<status status="NOT RUN" start="2026-04-06T16:58:09.821588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.665968" elapsed="0.000000"/>
 </kw>
 <kw name="Jump To">
 <arg>Gaming</arg>
-<status status="NOT RUN" start="2026-04-06T16:58:09.821588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.665968" elapsed="0.000000"/>
 </kw>
 <kw name="Jump To">
 <arg>Reviews</arg>
-<status status="NOT RUN" start="2026-04-06T16:58:09.821588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.665968" elapsed="0.000000"/>
 </kw>
 <kw name="Jump To">
 <arg>blog</arg>
-<status status="NOT RUN" start="2026-04-06T16:58:09.821588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.665968" elapsed="0.000000"/>
 </kw>
 <kw name="Jump To">
 <arg>Tarun Singh</arg>
-<status status="NOT RUN" start="2026-04-06T16:58:09.821588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-04-06T17:08:00.665968" elapsed="0.000000"/>
 </kw>
-<status status="FAIL" start="2026-04-06T16:58:08.787017" elapsed="1.035571">Evaluating expression '{"x-ci-secret": $CF_TEST_SECRET}' failed: Variable '$CF_TEST_SECRET' not found.</status>
+<status status="FAIL" start="2026-04-06T17:07:59.419946" elapsed="1.246022">Evaluating expression '{"x-ci-secret": $CF_TEST_SECRET}' failed: Variable '$CF_TEST_SECRET' not found.</status>
 </test>
-<status status="FAIL" start="2026-04-06T16:58:08.516375" elapsed="1.306213"/>
+<status status="FAIL" start="2026-04-06T17:07:59.147625" elapsed="1.519498"/>
 </suite>
 <statistics>
 <total>
@@ -422,6 +428,6 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2026-04-06T16:58:08.786002" level="ERROR">Error in file 'C:\Users\tarun\Documents\Programs\python-sql-portfolio\python\robot\websitenav.robot' on line 7: Setting variable '${CF_TEST_SECRET}' failed: Environment variable '%{CF_TEST_SECRET}' not found.</msg>
+<msg time="2026-04-06T17:07:59.418928" level="ERROR">Error in file 'C:\Users\tarun\Documents\Programs\python-sql-portfolio\python\robot\websitenav.robot' on line 7: Setting variable '${CF_TEST_SECRET}' failed: Environment variable '%{CF_TEST_SECRET}' not found.</msg>
 </errors>
 </robot>

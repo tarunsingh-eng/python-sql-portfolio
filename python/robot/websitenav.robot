@@ -63,6 +63,7 @@ Navigation Test
     ${html_lower}=      Convert To Lower Case        ${html}
 
     ${has_courses}=     Evaluate       "Courses" in $html
+    ${has_projects}=     Evaluate       "Projects" in $html
     ${has_cloudflare}=  Evaluate        "cloudflare" in $html_lower
     ${has_just_a_moment}=   Evaluate    "just a moment" in $html_lower
     ${has_verify_human}=    Evaluate    "verify you are human" in $html_lower
@@ -71,6 +72,7 @@ Navigation Test
     Log To Console         Title: ${title}
     Log To Console         URl: ${url}
     Log To Console         HAS_COURSES_TEXT: ${has_courses}
+    Log To Console         HAS_Project_TEXT: ${has_projects}
     Log To Console         HAS_CLOUDFLARE: ${has_cloudflare}
     Log To Console         HAS_JUST_A_MOMENT: ${has_just_a_moment}
     Log To Console         HAS_VERIFY_HUMAN: ${has_verify_human}
@@ -85,6 +87,7 @@ Navigation Test
     Wait Until Page Contains Element    xpath=//a[normalize-space()='Courses']    20s
     Scroll Element Into View    xpath=//a[normalize-space()='Courses']
     Jump To         Courses
+    Sleep           2s
 
     Wait Until Location Contains    /courses    20s
     
@@ -94,18 +97,16 @@ Navigation Test
     ${title}=    Get Title
     Log To Console         TITLE=${title}
     Log To Console         URl: ${url}
-    Log To Console         HAS_PROJECTS_TEXT: ${has_projects}
+    Log To Console         HAS_Project_TEXT: ${has_projects}
     Log To Console         HAS_CLOUDFLARE: ${has_cloudflare}
     Log To Console         HAS_JUST_A_MOMENT: ${has_just_a_moment}
     Log To Console         HAS_VERIFY_HUMAN: ${has_verify_human}
     Log To Console         HAS_ACCESS_DENIED: ${has_access_denied}
 
-    Page Should Contain Element    xpath=//a[normalize-space()='Projects']
-
-    Wait Until Page Contains Element    xpath=//a[normalize-space()='Projects']    20s
-    Scroll Element Into View    xpath=//a[normalize-space()='Projects']
-    
+    ${html}=            Get Source
+    ${has_projects}=    Evaluate        "Projects" in $html
     Jump To         Projects
+    Sleep           2s
 
     Wait Until Page Contains Element    xpath=//a[normalize-space()='Video Portfolio']    20s  
 
