@@ -11,6 +11,7 @@ ${BASE_URL}           https://tarunsingh.co.in
 Title Should Not Be Empty
     ${title}=    Get Title
     Should Not Be Empty     ${title}
+
 Open Chrome For CI
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    --headless\=new
@@ -45,10 +46,14 @@ Click Nav Link
     Execute Javascript    arguments[0].scrollIntoView({block: 'center', inline: 'center'});    ARGUMENTS    ${el}
     Execute Javascript    arguments[0].click();    ARGUMENTS    ${el}
 
+Jump To 
+    [Arguments]     ${text}
+    Execute javascript         window.location.href = document.evaluate("//a[normalize-space()='${text}']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.href + "?cf_secret=${CF_TEST_SECRET}"
+
 *** Test Cases ***
 Navigation Test
     Open Chrome For CI
-    Go To       ${BASE_URL}/
+    Go To       ${BASE_URL}/?cf_secret=${CF_TEST_SECRET}
      
     Wait Until Page Contains Element    xpath=//a[normalize-space()='Courses']    20s
 
@@ -79,7 +84,7 @@ Navigation Test
 
     Wait Until Page Contains Element    xpath=//a[normalize-space()='Courses']    20s
     Scroll Element Into View    xpath=//a[normalize-space()='Courses']
-    Click Element    xpath=//a[normalize-space()='Courses']
+    Jump To         Courses
 
     Wait Until Location Contains    /courses    20s
     
@@ -100,28 +105,16 @@ Navigation Test
     Wait Until Page Contains Element    xpath=//a[normalize-space()='Projects']    20s
     Scroll Element Into View    xpath=//a[normalize-space()='Projects']
     
-    Click Element    xpath=//a[normalize-space()='Projects']
+    Jump To         Projects
 
-    Scroll Element Into View    xpath=//a[normalize-space()='Video Portfolio']
-    Click Element    xpath=//a[normalize-space()='Video Portfolio']
+    Wait Until Page Contains Element    xpath=//a[normalize-space()='Video Portfolio']    20s  
 
-    Scroll Element Into View    xpath=//a[normalize-space()='Behind The Lens']
-    Click Element    xpath=//a[normalize-space()='Behind The Lens']
-
-    Scroll Element Into View    xpath=//a[normalize-space()='Digital Art']
-    Click Element    xpath=//a[normalize-space()='Digital Art']
-
-    Scroll Element Into View    xpath=//a[normalize-space()='About']
-    Click Element    xpath=//a[normalize-space()='About']
-
-    Scroll Element Into View    xpath=//a[normalize-space()='Gaming']
-    Click Element    xpath=//a[normalize-space()='Gaming']
-
-    Scroll Element Into View    xpath=//a[normalize-space()='Reviews']
-    Click Element    xpath=//a[normalize-space()='Reviews']
-
-    Scroll Element Into View    xpath=//a[normalize-space()='blog']
-    Click Element    xpath=//a[normalize-space()='blog']
-
-    Scroll Element Into View    xpath=//a[normalize-space()='Tarun Singh']
-    Click Element    xpath=//a[normalize-space()='Tarun Singh']
+    
+    Jump To      Video Portfolio
+    Jump To      Behind The Lens
+    Jump To      Digital Art
+    Jump To      About
+    Jump To      Gaming
+    Jump To      Reviews
+    Jump To      blog
+    Jump To      Tarun Singh

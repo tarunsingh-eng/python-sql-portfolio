@@ -3,6 +3,4 @@ def solve(A):
    
     return B
 
-
-            
 print(solve(5))
