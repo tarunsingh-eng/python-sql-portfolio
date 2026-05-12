@@ -83,8 +83,6 @@ def test_mysite(protected_driver):
         EC.presence_of_element_located(
         (By.CSS_SELECTOR, 'a[href="https://tarunsingh.co.in/courses/"]')))
     
-
-
     protected_driver.execute_script("arguments[0].scrollIntoView({block:'center'});", element)
 
     WebDriverWait(protected_driver, 5).until(EC.element_to_be_clickable(
