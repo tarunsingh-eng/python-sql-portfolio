@@ -14,3 +14,4 @@ print(result)
 print([f"{x:.1f}" for x in result])
 print("["+" ".join(f"{x:.1f}" for x in result) + "]")
 print(" ".join(f"{x:.1f}" for x in result) + " ")
+print("Done");
