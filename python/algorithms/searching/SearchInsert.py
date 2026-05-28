@@ -4,7 +4,7 @@ def searchInsert(A, B):
         while l <= r:
             mid = l + (r-l)//2
             print("-------------------")
-            print("Value of mid is:", mid)
+            print("Value of middle is:", mid)
             print("Value of left is:", l)
             print("Value of right is:", r)
             print(int(0))
