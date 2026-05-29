@@ -40,5 +40,5 @@ if __name__ == '__main__':
         elif cmd[0] == "reverse":
             arr.reverse()
         else:
-            print("enter valid input")
+            print("enter valid-input")
             
